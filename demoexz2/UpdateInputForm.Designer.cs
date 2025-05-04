@@ -1,6 +1,6 @@
 ﻿namespace demoexz2
 {
-    partial class Form3
+    partial class UpdateInputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateInputForm));
             this.label1 = new System.Windows.Forms.Label();
             this.labelRaiting = new System.Windows.Forms.TextBox();
             this.labelNomer = new System.Windows.Forms.TextBox();

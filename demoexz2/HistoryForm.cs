@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace demoexz2
 {
-    public partial class FormHistory : Form
+    public partial class HistoryForm : Form
     {
         string ID_partner;
-        public FormHistory(string ID_partner)
+        public HistoryForm(string ID_partner)
         {
             InitializeComponent();
             this.ID_partner = ID_partner;
@@ -35,7 +35,7 @@ namespace demoexz2
             FROM Продажи
             Where Партнер={ID_partner}";
 
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 connection.Open();
@@ -43,7 +43,7 @@ namespace demoexz2
 
                 while (reader.Read())
                 {
-                    var card = new History();
+                    var card = new HistoryDesign();
                     card.SetData(
                         reader["Дата"].ToString(),
                         ConvertIdInName(reader["Продукция"].ToString()),
@@ -56,7 +56,7 @@ namespace demoexz2
         private string ConvertIdInName(string ID_prod)
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Наименование from Продукция where Код = {ID_prod}", connection))
             {
                 connection.Open();

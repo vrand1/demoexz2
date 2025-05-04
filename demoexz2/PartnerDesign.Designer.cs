@@ -1,6 +1,6 @@
 ﻿namespace demoexz2
 {
-    partial class Partner
+    partial class PartnerDesign
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

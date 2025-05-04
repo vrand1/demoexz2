@@ -1,6 +1,6 @@
 ﻿namespace demoexz2
 {
-    partial class Form2
+    partial class CalcForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalcForm));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelDirector = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -159,8 +159,9 @@
             this.button2.TabIndex = 39;
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form2
+            // CalcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +180,7 @@
             this.Controls.Add(this.labelDirector);
             this.Controls.Add(this.comboBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "CalcForm";
             this.Text = "Расчёт";
             this.ResumeLayout(false);
             this.PerformLayout();

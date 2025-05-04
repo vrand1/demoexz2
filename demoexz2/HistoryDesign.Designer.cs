@@ -1,6 +1,6 @@
 ﻿namespace demoexz2
 {
-    partial class History
+    partial class HistoryDesign
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace demoexz2
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         
         public string _connectionString = "Server=DESKTOP-S6R4FFT;Database=demo2;uid=demo1;pwd=123;"; // свои данные подставьте
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             LoadPartners();
@@ -79,7 +79,7 @@ namespace demoexz2
 
                 while (reader.Read())
                 {
-                    var card = new Partner(this);
+                    var card = new PartnerDesign(this);
                     card.SetData(
                         reader["Тип"].ToString(),
                         reader["Имя"].ToString(),
@@ -96,7 +96,7 @@ namespace demoexz2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var forma = new Form3();
+            var forma = new UpdateInputForm();
             forma.FormClosed += FormUpdate;
             forma.SetData();
             forma.ShowDialog();
@@ -109,7 +109,7 @@ namespace demoexz2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var form = new Form2();
+            var form = new CalcForm();
             form.Show();
         }
     }

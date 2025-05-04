@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace demoexz2
 {
-    public partial class Form2 : Form
+    public partial class CalcForm : Form
     {
         string material_name, material_brak;
-        public Form2()
+        public CalcForm()
         {
             InitializeComponent();
             SetNames();
         }
         public void SetNames()
         {
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand("Select * from Продукция", connection))
@@ -40,7 +40,7 @@ namespace demoexz2
         private string ConvertNameInID()
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Код from Продукция where Наименование = '{comboBox1.Text}'", connection))
             {
                 connection.Open();
@@ -51,7 +51,7 @@ namespace demoexz2
         private string ProductType()
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Тип_продукции from Продукция where Наименование = '{comboBox1.Text}'", connection))
             {
                 connection.Open();
@@ -62,7 +62,7 @@ namespace demoexz2
         private string koef() 
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Коэффициент from Типы_продукции where Код = {ProductType()}", connection))
             {
                 connection.Open();
@@ -73,7 +73,7 @@ namespace demoexz2
         private string material_type()
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Код_типа_материала from Материалы_в_продукции where Код_продукции = {ProductType()}", connection))
             {
                 connection.Open();
@@ -83,7 +83,7 @@ namespace demoexz2
         }
         private void NameAndBrakMaterial()
         {
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Наименование, Процент_брака from Типы_материалов where Код = {material_type()}", connection))
             {
                 connection.Open();
@@ -109,6 +109,10 @@ namespace demoexz2
             
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

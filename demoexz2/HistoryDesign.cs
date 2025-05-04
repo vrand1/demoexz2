@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace demoexz2
 {
-    public partial class History : UserControl
+    public partial class HistoryDesign : UserControl
     {
-        public History()
+        public HistoryDesign()
         {
             InitializeComponent();
         }

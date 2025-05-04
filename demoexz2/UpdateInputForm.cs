@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace demoexz2
 {
-    public partial class Form3 : Form
+    public partial class UpdateInputForm : Form
     {
         string type, name, director, phone, raiting, email, id;
 
@@ -26,7 +26,7 @@ namespace demoexz2
         }
 
         bool condition; // false - редактирование, true - добавление
-        public Form3()
+        public UpdateInputForm()
         {
             InitializeComponent();
             SetTypes();
@@ -56,7 +56,7 @@ namespace demoexz2
         }
         public void SetTypes()
         {
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString)) 
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString)) 
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand("Select * from Типы_партнеров", connection)) 
@@ -89,7 +89,7 @@ namespace demoexz2
         }
         public void UpdateData(object sender, EventArgs e) 
         {
-            using(SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using(SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand($"update Партнеры set Тип_партнера = {ConvertTypeInID()}, Наименование = '{labelNaimenovanie.Text}', Директор = '{labelDirector.Text}', Электронная_почта = '{textBox1.Text}', Телефон = '{labelNomer.Text}', Рейтинг = {labelRaiting.Text}, Юридический_адрес = '{textBox2.Text}' where Код = '{id}'", connection)) 
@@ -100,7 +100,7 @@ namespace demoexz2
         }
         private void InsertData(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand($"INSERT INTO Партнеры (Тип_партнера, Наименование, Директор, Электронная_почта, Телефон, Юридический_адрес, Рейтинг) values ({ConvertTypeInID()}, '{labelNaimenovanie.Text}', '{labelDirector.Text}', '{textBox1.Text}', '{labelNomer.Text}','{textBox2.Text}', {labelRaiting.Text} )", connection))
@@ -112,7 +112,7 @@ namespace demoexz2
         private string ConvertTypeInID() 
         {
             string value;
-            using (SqlConnection connection = new SqlConnection(new Form1()._connectionString))
+            using (SqlConnection connection = new SqlConnection(new MainForm()._connectionString))
             using (SqlCommand command = new SqlCommand($"select Код from Типы_партнеров where Наименование = '{comboBox1.Text}'", connection))
             {
                 connection.Open();

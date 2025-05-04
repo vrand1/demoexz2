@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace demoexz2
 {
-    public partial class Partner : UserControl
+    public partial class PartnerDesign : UserControl
     {
-        private Form1 mainform;
+        private MainForm mainform;
         string type, name, discount, director, phone, raiting,id;
-        public Partner(Form1 form)
+        public PartnerDesign(MainForm form)
         {
             InitializeComponent();
             panel1.SendToBack();
@@ -41,7 +41,7 @@ namespace demoexz2
         public void InputData() { }
         public void UpdateData() 
         {
-            var form = new Form3();
+            var form = new UpdateInputForm();
             form.FormClosed += mainform.FormUpdate;
             form.SetData(type, name, director, phone, raiting, id);
             form.ShowDialog();
@@ -54,7 +54,7 @@ namespace demoexz2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var history = new FormHistory(id);
+            var history = new HistoryForm(id);
             history.ShowDialog();
         }
 
