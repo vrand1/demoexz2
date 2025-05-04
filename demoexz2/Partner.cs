@@ -52,6 +52,12 @@ namespace demoexz2
             
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var history = new FormHistory(id);
+            history.ShowDialog();
+        }
+
         private void labelTip_Click(object sender, EventArgs e)
         {
             UpdateData();

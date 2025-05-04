@@ -36,6 +36,7 @@
             this.labelNaimenovanie = new System.Windows.Forms.Label();
             this.labelTip = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelSkidka);
             this.panel1.Controls.Add(this.labelNaimenovanie);
@@ -133,8 +135,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(398, 116);
+            this.panel1.Size = new System.Drawing.Size(398, 98);
             this.panel1.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(186)))), ((int)(((byte)(128)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.Location = new System.Drawing.Point(223, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 42);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "реализация продукции";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Partner
             // 
@@ -145,7 +159,7 @@
             this.Controls.Add(this.labelDirector);
             this.Controls.Add(this.panel1);
             this.Name = "Partner";
-            this.Size = new System.Drawing.Size(398, 116);
+            this.Size = new System.Drawing.Size(398, 98);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -162,7 +176,6 @@
         private System.Windows.Forms.Label labelDirector;
         private System.Windows.Forms.Label labelNaimenovanie;
         private System.Windows.Forms.Label labelTip;
-        
-        
+        private System.Windows.Forms.Button button1;
     }
 }
