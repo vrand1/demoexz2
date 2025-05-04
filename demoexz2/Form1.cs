@@ -106,5 +106,11 @@ namespace demoexz2
             flowLayoutPanel1.Controls.Clear();
             LoadPartners();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new Form2();
+            form.Show();
+        }
     }
 }
